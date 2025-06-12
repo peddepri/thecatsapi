@@ -32,6 +32,15 @@ services:
       - "3000:3000"
     networks:
       - catsapi-network
+  
+  loki:
+    image: grafana/loki:latest
+    restart: always
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    networks:
+      - catsapi-network
 
 networks:
   catsapi-network:
