@@ -57,7 +57,7 @@ Acesse o H2 Console em:
 
 ### Docker
 
-Para rodar com Docker Compose (PostgreSQL, Prometheus, Grafana):
+Para rodar com Docker Compose (H2, Prometheus, Grafana):
 
 ```sh
 docker-compose up --build
