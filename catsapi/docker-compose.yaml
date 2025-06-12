@@ -2,30 +2,16 @@ version: '3.8'
 
 services:
   app:
-    image: catsapi:latest:0.0.1
+    image: catsapi:0.0.1
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/datacollector
-      SPRING_DATASOURCE_USERNAME: user
-      SPRING_DATASOURCE_PASSWORD: password
-    depends_on:
-      - db
-    networks:
-      - catsapi-network
-  
-  db:
-    image: postgres:latest
-    restart: always
-    environment:
-      POSTGRES_DB: datacollector
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-    volumes:
-      - db_data:/var/lib/postgresql/data
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:cats
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: ""
     networks:
       - catsapi-network
 
@@ -50,6 +36,3 @@ services:
 networks:
   catsapi-network:
     driver: bridge
-
-volumes:
-  db_data:
