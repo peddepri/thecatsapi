@@ -1,0 +1,14 @@
+com\priscila\catsapi\model\Imagem$ImagemBuilder.class
+com\priscila\catsapi\service\ImagemService.class
+com\priscila\catsapi\model\Imagem.class
+com\priscila\catsapi\controller\RacaController.class
+com\priscila\catsapi\dto\RacaDto.class
+com\priscila\catsapi\service\RacaService.class
+com\priscila\catsapi\model\Raca.class
+com\priscila\catsapi\repository\ImagemRepository.class
+com\priscila\catsapi\controller\ImagemController.class
+com\priscila\catsapi\repository\RacaRepository.class
+com\priscila\catsapi\model\Raca$RacaBuilder.class
+com\priscila\catsapi\CatsapiApplication.class
+com\priscila\catsapi\service\service\impl\ImagemServiceImpl.class
+com\priscila\catsapi\service\service\impl\RacaServiceImpl.class
