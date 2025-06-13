@@ -12,39 +12,38 @@ services:
       SPRING_DATASOURCE_URL: jdbc:h2:mem:cats
       SPRING_DATASOURCE_USERNAME: sa
       SPRING_DATASOURCE_PASSWORD: ""
-    depends_on:
-      - h2
+    # depends_on:
+    #   - h2
     networks:
       - catsapi-network
-
-  h2:
-    image: oscarfonts/h2
-    restart: always
-    ports:
-      - "1521:1521"
-      - "81:81"
-    environment:
-      H2_OPTIONS: "-tcp -tcpAllowOthers -web -webAllowOthers"
-    networks:
-      - catsapi-network
-
-  prometheus:
+    prometheus:
     image: prom/prometheus
-    restart: always
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    container_name: prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
     ports:
-      - "9090:9090"
+      - 9090:9090
+    restart: unless-stopped
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prom_data:/prometheus
     networks:
       - catsapi-network
-
   grafana:
     image: grafana/grafana
-    restart: always
+    container_name: grafana
     ports:
-      - "3000:3000"
+      - 3000:3000
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=grafana
+    volumes:
+      - ./grafana:/etc/grafana/provisioning/datasources
     networks:
       - catsapi-network
+volumes:
+  prom_data:
 
   loki:
     image: grafana/loki:latest
