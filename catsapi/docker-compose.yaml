@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   app:
-    image: catsapi:0.0.1
+    image: catsapi:0.0.3
     build:
       context: .
       dockerfile: Dockerfile
@@ -12,45 +12,22 @@ services:
       SPRING_DATASOURCE_URL: jdbc:h2:mem:cats
       SPRING_DATASOURCE_USERNAME: sa
       SPRING_DATASOURCE_PASSWORD: ""
-    # depends_on:
-    #   - h2
     networks:
       - catsapi-network
-    prometheus:
-    image: prom/prometheus
-    container_name: prometheus
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-    ports:
-      - 9090:9090
-    restart: unless-stopped
-    volumes:
-      - ./prometheus:/etc/prometheus
-      - prom_data:/prometheus
-    networks:
-      - catsapi-network
-  grafana:
-    image: grafana/grafana
-    container_name: grafana
-    ports:
-      - 3000:3000
-    restart: unless-stopped
-    environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=grafana
-    volumes:
-      - ./grafana:/etc/grafana/provisioning/datasources
-    networks:
-      - catsapi-network
-volumes:
-  prom_data:
 
-  loki:
-    image: grafana/loki:latest
-    restart: always
+  prometheus:
+    build: "./prometheus"
     ports:
-      - "3100:3100"
-    command: -config.file=/etc/loki/local-config.yaml
+      - "9090:9090"
+    container_name: prometheus
+    networks:
+      - catsapi-network
+
+  grafana:
+    build: "./grafana"
+    ports:
+      - "3000:3000"
+    container_name: grafana
     networks:
       - catsapi-network
 

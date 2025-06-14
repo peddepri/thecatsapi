@@ -1,0 +1,214 @@
+type: collection.insomnia.rest/5.0
+name: Estudo
+meta:
+  id: wrk_265e45eec16c459bb83c1cecacb010de
+  created: 1748891293883
+  modified: 1748891293883
+  description: ""
+collection:
+  - url: http://localhost:8080/produtos
+    name: New Request
+    meta:
+      id: req_eee6fdd7cc6a44bf93a9316c8dffd18a
+      created: 1748891307338
+      modified: 1748975664804
+      isPrivate: false
+      description: ""
+      sortKey: -1748891307338
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome":"Pendrive2", 
+        	"descricao":"marca x2", 
+        	"preco":2088.04
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/racas/importar
+    name: importar-racas
+    meta:
+      id: req_6f8ef12a26d041a89344b4ac4ffae2a9
+      created: 1749682893219
+      modified: 1749684043763
+      isPrivate: false
+      description: ""
+      sortKey: -1749682893219
+    method: POST
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/imagens/importar/oculos
+    name: importar-oculos
+    meta:
+      id: req_c09ac06efdb84638aad9a62c1df8ae7e
+      created: 1749683981336
+      modified: 1749684136762
+      isPrivate: false
+      description: ""
+      sortKey: -1749683981336
+    method: POST
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/imagens/importar/chapeu
+    name: importar-chapeu
+    meta:
+      id: req_9a5abfa251414da9863e7657879e9228
+      created: 1749683988298
+      modified: 1749684142077
+      isPrivate: false
+      description: ""
+      sortKey: -1749683988298
+    method: POST
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/racas
+    name: raca
+    meta:
+      id: req_926b052d6dd74748b65ac040e4b34cc6
+      created: 1749685592117
+      modified: 1749685614682
+      isPrivate: false
+      description: ""
+      sortKey: -1749685592117
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/racas/beng
+    name: beng
+    meta:
+      id: req_8c5a042160dc4c1e99601ff1608561d0
+      created: 1749686141090
+      modified: 1749686158508
+      isPrivate: false
+      description: ""
+      sortKey: -1749684790207.5
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/racas/temperamento/Gentle
+    name: temperamento
+    meta:
+      id: req_999f5c163a6e43f6975086d3f96e84c5
+      created: 1749686214184
+      modified: 1749686221720
+      isPrivate: false
+      description: ""
+      sortKey: -1749684389252.75
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:8080/racas/origem/Egypt
+    name: origem
+    meta:
+      id: req_9143e356e0a34966a8f3ba3cb080b6eb
+      created: 1749686274507
+      modified: 1749686297392
+      isPrivate: false
+      description: ""
+      sortKey: -1749684188775.375
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.2.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_f3803bece5b60a8588945ed5c1672de0a886c75c
+    created: 1748891293888
+    modified: 1748891293888
+environments:
+  name: Base Environment
+  meta:
+    id: env_f3803bece5b60a8588945ed5c1672de0a886c75c
+    created: 1748891293886
+    modified: 1748891293886
+    isPrivate: false
