@@ -57,13 +57,21 @@ Acesse o H2 Console em:
 
 ### Docker
 
-Para rodar com Docker Compose (H2, Prometheus, Grafana):
+Para rodar com Docker Compose (app, H2, Prometheus, Grafana):
+
+Imagem disponibilizada no DockerHub.
 
 ```sh
-docker-compose up --build
+docker pull ppedde/catsapi:0.0.3
 ```
 
-A aplicação estará em `http://localhost:8080`.
+```sh
+docker-compose up
+```
+
+A aplicação estará em `http://localhost:8080`. 
+Precisamos popular o BD H2. Use a collection do Insomnia para isso. Método POST (importar racas).
+Após poderá rodar no insomnia o método GET para testar as API.
 
 ## Configuração
 
@@ -73,6 +81,7 @@ Veja [src/main/resources/application.yml](src/main/resources/application.yml) pa
 
 - Prometheus: `http://localhost:9090`
 - Grafana: `http://localhost:3000`
+- Usuário padrão do Grafana Admin e senha Admin. Primeiro acesso irá solicitar a troca da senha.
 
 ## Estrutura do Projeto
 
