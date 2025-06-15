@@ -22,3 +22,5 @@ spring:
       web:
         exposure:
           include: "*"
+      prometheus:
+        enabled: true

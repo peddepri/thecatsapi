@@ -5,8 +5,8 @@ import com.priscila.catsapi.repository.RacaRepository;
 import com.priscila.catsapi.service.RacaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController

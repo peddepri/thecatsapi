@@ -5,6 +5,7 @@ com\priscila\catsapi\controller\RacaController.class
 com\priscila\catsapi\dto\RacaDto.class
 com\priscila\catsapi\service\RacaService.class
 com\priscila\catsapi\model\Raca.class
+com\priscila\catsapi\controller\RootRedirectController.class
 com\priscila\catsapi\repository\ImagemRepository.class
 com\priscila\catsapi\controller\ImagemController.class
 com\priscila\catsapi\repository\RacaRepository.class

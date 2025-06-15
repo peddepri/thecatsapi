@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   app:
-    image: catsapi:0.0.3
+    image: catsapi:0.0.1
     build:
       context: .
       dockerfile: Dockerfile

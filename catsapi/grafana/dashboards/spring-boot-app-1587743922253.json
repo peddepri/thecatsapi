@@ -452,7 +452,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
-      "description": "Endpoint: $DOCKER_IP:8080/hi",
+      "description": "Endpoint: catsapi:8080/hi",
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -623,7 +623,7 @@
     ]
   },
   "timezone": "",
-  "title": "spring-boot-app",
+  "title": "TheCatsApi-app",
   "uid": "zxnqJy3Wz",
   "variables": {
     "list": []
